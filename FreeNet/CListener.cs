@@ -49,14 +49,14 @@ namespace FreeNet
 				listen_socket.Listen(backlog);
 
 				this.accept_args = new SocketAsyncEventArgs();
-				this.accept_args.Completed +=  new EventHandler<SocketAsyncEventArgs>(on_accept_completed);
+				this.accept_args.Completed += new EventHandler<SocketAsyncEventArgs>(on_accept_completed);
 
 				Thread listen_thread = new Thread(do_listen);
 				listen_thread.Start();
 			}
 			catch (Exception e)
 			{
-				Console.WriteLine(e.Message);
+				//Console.WriteLine(e.Message);
 			}
 		}
 
@@ -83,7 +83,7 @@ namespace FreeNet
 				}
 				catch (Exception e)
 				{
-					Console.WriteLine(e.Message);
+					//Console.WriteLine(e.Message);
 					continue;
 				}
 
@@ -189,7 +189,7 @@ namespace FreeNet
 			//	// 바디 사이즈 파싱.
 			//	Int16 body_size = BitConverter.ToInt16(state.buffer, 0);
 
-			//	if (body_size <= 0 || body_size > 10240)
+			//	if (body_size <= 0 || body_size > 40960)
 			//	{
 			//		state.workSocket.Close();
 			//		return;

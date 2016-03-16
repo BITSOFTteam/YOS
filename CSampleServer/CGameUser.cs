@@ -27,8 +27,8 @@ namespace CSampleServer
 			// ex)
 			CPacket msg = new CPacket(buffer.Value, this);
 			PROTOCOL protocol = (PROTOCOL)msg.pop_protocol_id();
-			Console.WriteLine("------------------------------------------------------");
-			Console.WriteLine("protocol id " + protocol);
+			//Console.WriteLine("------------------------------------------------------");
+			//Console.WriteLine("protocol id " + protocol);
 			switch (protocol)
 			{
 				case PROTOCOL.CHAT_MSG_REQ:
@@ -46,7 +46,7 @@ namespace CSampleServer
 
 		void IPeer.on_removed()
 		{
-			Console.WriteLine("The client disconnected.");
+			//Console.WriteLine("The client disconnected.");
 
 			Program.remove_user(this);
 		}

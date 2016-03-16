@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FreeNet;
+using Oracle.ManagedDataAccess.Client;
+using System.Data;
 
 namespace CSampleServer
 {
 	class Program
 	{
+
 		static List<CGameUser> userlist;
 
 		static void Main(string[] args)
@@ -23,8 +26,17 @@ namespace CSampleServer
 			service.initialize();
 			service.listen("0.0.0.0", 7979, 100);
 
+            /************************************DBConnect**********************************************/
 
-			Console.WriteLine("Started!");
+            //전송DATA1 "User Id=scott;Password=tiger;Data Source=ORCL"
+            //string strConn = "User Id=scott;Password=tiger;Data Source=ORCL";
+
+            ////전송DATA2 "SELECT * FROM LECTURER2"
+            //OracleDataAdapter oraDA = new OracleDataAdapter("SELECT * FROM LECTURER2", strConn);
+            //DataTable dt = new DataTable();
+            //oraDA.Fill(dt);
+
+            Console.WriteLine("Started!");
 			while (true)
 			{
 				//Console.Write(".");
