@@ -4,12 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="500" Loaded="UserControl_Loaded">
     <Grid>
         <ScrollViewer>
             <StackPanel MinWidth="200">
-                <TextBlock Text="All Select" Style="{StaticResource Heading2}" />
-                <DataGrid x:Name="dataGrid"/>
+                <TextBlock Text="All Select" Style="{StaticResource Heading2}" Height="64" />
+                <DataGrid x:Name="dataGrid" Height="223" Width="462" Background="#FF5F616A"/>
 
             </StackPanel>
         </ScrollViewer>
